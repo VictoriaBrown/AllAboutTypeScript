@@ -46,6 +46,7 @@ makeASandwich(sandwichIngredients);
 // Below is an example of using an interface to enforce the structure of a class: 
 interface Lifespan {
     currentTime: Date;
+    printDate(): void;      // Ensures that the printDate() method doesn't return anything in the class
 }
 
 class AppointmentDateFormatter implements Lifespan {
@@ -55,4 +56,12 @@ class AppointmentDateFormatter implements Lifespan {
     }
 
     currentTime: Date;
+
+    printDate(): void {
+        console.log(this.currentTime.toDateString());
+    }
 }
+
+const dateOfAppointment = new AppointmentDateFormatter(12, 4, 2018);
+
+dateOfAppointment.printDate();
