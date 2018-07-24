@@ -16,16 +16,16 @@ orderFood('Ham & Cheese', 32);
 
 // Using an interface!!! 
 interface ingredientBasket {
-    numberOfItems: number;
+    readonly numberOfItems: number;     // readonly makes numberOfItems not editable after creation of this interface
     ingredients: Array<string>;
-    calories: number;
+    calories?: number;      // The ? denotes that the calories are not a required parameter    
 }
 
 // Variable for the interface
 const sandwichIngredients = {
-    readonly numberOfItems: number;
+    numberOfItems: number;
     ingredients: ['bacon', 'lettuce', 'tomato'],
-    calories?: number;      // The ? denotes that the calories are not a required parameter
+    calories: number;      
 };
 
 // Function to use the interface and variable we just made
