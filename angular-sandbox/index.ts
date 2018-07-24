@@ -65,3 +65,20 @@ class AppointmentDateFormatter implements Lifespan {
 const dateOfAppointment = new AppointmentDateFormatter(12, 4, 2018);
 
 dateOfAppointment.printDate();
+
+// These next two interfaces show how extending interfaces works! 
+
+interface Shape {
+    sides: number;
+}
+
+interface Triangle extends Shape {
+    angles: number[];
+}
+
+// So any Triangle made needs to have number for sides and numbers for angles.
+let equilateral = <Triangle>{};
+equilateral.sides = 3;
+equilateral.angles = [60, 60, 60];
+
+console.log(equilateral);
