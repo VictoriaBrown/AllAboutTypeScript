@@ -96,3 +96,43 @@ interface Flyable {
 interface SuperHero extends Person, Flyable {
     powers: string[];
 }
+
+// You can make classes implement multiple interfaces too! 
+// Below the Bat class implements Mammal and WingedAnimal interfaces
+interface Animal {
+    name: string;
+    whoAmI(): void;
+}
+
+interface Mammal extends Animal {
+    brushHair(): void;
+}
+
+interface WingedAnimal extends Animal {
+    fly(): void;
+}
+
+class Bat implements Mammal, WingedAnimal {
+    name: string;
+
+    constructor(name: string) {
+        this.name = name
+    }
+
+    whoAmI(): void {
+        console.log("I'm " + this.name + "!");
+    }
+
+    brushHair(): void {
+        console.log("Brush brush! Must look purdy!");
+    }
+
+    fly(): void {
+        console.log("Look mommy! I can fly!");
+    }
+}
+
+let bat = new Bat("Bartok");
+bat.whoAmI();
+bat.brushHair();
+bat.fly();
