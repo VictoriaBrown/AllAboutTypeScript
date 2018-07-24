@@ -25,7 +25,7 @@ interface ingredientBasket {
 const sandwichIngredients = {
     numberOfItems: 3,
     ingredients: ['bacon', 'lettuce', 'tomato'],
-    calories: 320
+    calories?: number;      // The ? denotes that the calories are not a required parameter
 };
 
 // Function to use the interface and variable we just made
