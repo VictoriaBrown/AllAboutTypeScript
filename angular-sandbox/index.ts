@@ -82,3 +82,17 @@ equilateral.sides = 3;
 equilateral.angles = [60, 60, 60];
 
 console.log(equilateral);
+
+// Interfaces can extend multiple other interfaces! 
+// Below, the interface Superhero extends both the Person and Flyable interfaces: 
+interface Person {
+    name: string;
+}
+
+interface Flyable {
+    flyHeight: number;
+}
+
+interface SuperHero extends Person, Flyable {
+    powers: string[];
+}
