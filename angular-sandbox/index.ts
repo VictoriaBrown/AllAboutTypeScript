@@ -41,3 +41,18 @@ function makeASandwich(ingredients: ingredientBasket): void {
 
 // Making a sandwich using the function, variable, and interface!
 makeASandwich(sandwichIngredients);
+
+
+// Below is an example of using an interface to enforce the structure of a class: 
+interface Lifespan {
+    currentTime: Date;
+}
+
+class AppointmentDateFormatter implements Lifespan {
+    // notice that the constructor doesn't have return type annotation
+    constructor(day: number, month: number, year: number) {
+        this.currentTime = new Date(year, month, day);
+    }
+
+    currentTime: Date;
+}
