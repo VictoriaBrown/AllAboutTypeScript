@@ -23,7 +23,7 @@ interface ingredientBasket {
 
 // Variable for the interface
 const sandwichIngredients = {
-    numberOfItems: 3,
+    readonly numberOfItems: number;
     ingredients: ['bacon', 'lettuce', 'tomato'],
     calories?: number;      // The ? denotes that the calories are not a required parameter
 };
