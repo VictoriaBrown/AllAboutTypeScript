@@ -14,8 +14,30 @@ function orderFood(sandwich: string, orderNumber: number): void {
 
 orderFood('Ham & Cheese', 32);
 
+// Using an interface!!! 
 interface ingredientBasket {
     numberOfItems: number;
     ingredients: Array<string>;
     calories: number;
 }
+
+// Variable for the interface
+const sandwichIngredients = {
+    numberOfItems: 3,
+    ingredients: ['bacon', 'lettuce', 'tomato'],
+    calories: 320
+};
+
+// Function to use the interface and variable we just made
+function makeASandwich(ingredients: ingredientBasket): void {
+    console.log(
+        'Beep boop, the ' + 
+        ingredients.numberOfItems + 
+        ' items passed in have been combined into a sandwich containing ' + 
+        ingredients.calories + 
+        ' calories'
+    );
+}
+
+// Making a sandwich using the function, variable, and interface!
+makeASandwich(sandwichIngredients);
