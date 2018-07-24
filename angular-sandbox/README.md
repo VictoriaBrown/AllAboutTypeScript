@@ -1,1 +1,1 @@
-Learning all about TypeScript and how it works with JavaScript! 
+:poop: Learning all about TypeScript and how it works with JavaScript! :poop:
