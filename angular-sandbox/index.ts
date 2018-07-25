@@ -178,3 +178,11 @@ const Rectangle2 = class Rectangle2 {
         return this.height * 2 + this.width * 2;
     }
 };
+
+
+// Square class - shows inheritance
+class Square extends Rectangle {
+    area() {
+        return this.height * this.width;
+    }
+}
