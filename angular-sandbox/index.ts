@@ -150,3 +150,31 @@ class Rectangle {
         return this.height * 2 + this.width * 2;
     }
 }
+
+// Unnamed expression example: 
+const Rectangle1 = class {
+    height: number;
+    width: number;
+    constructor(height: number, width: number) {
+        this.height = height;
+        this.width = width;
+    }
+
+    perimeter() {
+        return this.height * 2 + this.width * 2;
+    }
+};
+
+// Named expression example: 
+const Rectangle2 = class Rectangle2 {
+    height: number;
+    width: number;
+    constructor(height: number, width: number) {
+        this.height = height;
+        this.width = width;
+    }
+
+    perimeter() {
+        return this.height * 2 + this.width * 2;
+    }
+};
