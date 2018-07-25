@@ -186,3 +186,23 @@ class Square extends Rectangle {
         return this.height * this.width;
     }
 }
+
+// Generic function that tells you the type of argument and it's value
+function identity<T>(argument: T): string {
+    let argType: string = '';
+
+    switch (typeof argument) {
+        case 'number':
+            argType = 'number';
+            break;
+        case 'string':
+            argType = 'string';
+            break;
+        default: 
+            argType = 'neither a number or string';
+    }
+
+    return 'You pass in a ' + argType + ' which value is ' + argument;
+}
+
+console.log(identity(42));
