@@ -33,14 +33,15 @@ export class SkillsComponent implements OnInit {
   dataService: SkillsService;
 
   constructor(private skillsService: SkillsService) {
-    this.skills = skillsService.skills;
+    this.dataService = this.skillsService;
    }
 
   // Angular life-cycle method. ngOnInit is called shortly after 
   // creating a component and is used to place logic that needs to 
   // happen when the component is initialized.
-  ngOnInit(): void {
-    this.dataService.getSkills().subscribe(skills => this.skills = skills);
+  ngOnInit() {
+    // this.dataService.getSkills().subscribe(skills => this.skills = skills);
+    this.skills = this.dataService.skills;
   }
 
 }

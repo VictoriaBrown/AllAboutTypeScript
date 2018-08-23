@@ -1,3 +1,7 @@
 div {
  border-style: solid;   
 }
+
+li {
+    list-style: none;
+}
