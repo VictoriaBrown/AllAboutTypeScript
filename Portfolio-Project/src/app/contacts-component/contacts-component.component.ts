@@ -12,9 +12,17 @@ export class ContactsComponentComponent implements OnInit {
 
   constructor(private contactServiceService: ContactServiceService) {
     this.contacts= contactServiceService.contacts;
-   }
-
+  }
+  
+  // ngOnInit gets the data from service, calling the function of getContacts that gives us an
+  // observable that this component subscribes to
+  // Because it is subscribed, it passes a callback that updates local contacts with the results
+  // This should be run anytime data changes, so that this component can continually update
+  // itself with the new data
+  // Currently, with how this app is built, this will only becalled one time since the service is
+  // using static mock data
   ngOnInit() {
+    this.contactServiceService.getContacts().subscribe(contacts => this.contacts = contacts);
   }
 
 }

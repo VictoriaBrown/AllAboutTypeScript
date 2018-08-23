@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { ContactsService } from './contacts.service';
 import { Contact } from '../models/contact';
 
+// Importing Observable and Of from RxJS
+import { Observable, of } from 'rxjs';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -28,4 +31,10 @@ export class ContactServiceService {
   ];
 
   constructor() { }
+
+  // getContacts returns Observable for an array of Contact objects
+  // It uses of to to say it is going to return the array
+  getContacts = (): Observable<Contact[]> => {
+    return of(this.contacts);
+  };
 }
