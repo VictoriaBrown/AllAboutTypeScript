@@ -9,6 +9,7 @@ import { ContactServiceService } from '../services/contact-service.service';
 })
 export class ContactsComponentComponent implements OnInit {
   contacts: Contact[];
+  model: Contact = new Contact();
 
   constructor(private contactServiceService: ContactServiceService) {
     this.contacts= contactServiceService.contacts;
@@ -23,6 +24,10 @@ export class ContactsComponentComponent implements OnInit {
   // using static mock data
   ngOnInit() {
     this.contactServiceService.getContacts().subscribe(contacts => this.contacts = contacts);
+  }
+
+  onSubmit() {
+    console.log('Submit Successful: ', this.model);
   }
 
 }
