@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ContactsService } from './contacts.service';
-import { Contact } from '../models/contact';
+import { Contact } from '../shared/models/contact';
 
 // Importing Observable and Of from RxJS
 import { Observable, of } from 'rxjs';
@@ -37,4 +37,9 @@ export class ContactServiceService {
   getContacts = (): Observable<Contact[]> => {
     return of(this.contacts);
   };
+  
+  addContact (contact: Contact) {
+    this.contacts.push(contact);
+  }
 }
+
